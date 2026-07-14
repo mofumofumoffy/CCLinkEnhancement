@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "moffy.cclink_enhancement.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "cclink_enhancement.refmap.json",
+  "mixins": [
+    "LinkAPIMixin"
+  ],
+  "client": [
+    "LivingEntityRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

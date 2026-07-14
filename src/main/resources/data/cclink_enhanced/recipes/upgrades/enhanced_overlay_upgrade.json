@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "MOM",
+    "GHG"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "H": {
+      "item": "minecraft:diamond_helmet"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "M": {
+      "item": "computercraft:monitor_advanced"
+    },
+    "O":{
+      "item": "cclink:overlay_upgrade"
+    }
+  },
+  "result": {
+    "item": "cclink_enhancement:enhanced_overlay_upgrade",
+    "count": 1
+  }
+}
