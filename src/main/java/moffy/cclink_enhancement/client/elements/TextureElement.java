@@ -35,7 +35,6 @@ public class TextureElement extends EnhancedOverlayElement{
     }
 
     public TextureElement(@Nullable  ResourceLocation textureLoc, int uWidth, int vHeight, int x, int y, int scale) {
-        super();
         this.textureLoc = textureLoc;
         this.uWidth = uWidth;
         this.vHeight = vHeight;

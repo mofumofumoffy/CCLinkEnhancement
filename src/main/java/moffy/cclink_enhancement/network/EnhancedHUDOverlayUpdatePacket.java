@@ -1,7 +1,7 @@
 package moffy.cclink_enhancement.network;
 
 import com.awesoft.cclink.hudoverlay.packets.HUDOverlayUpdatePacket;
-import moffy.cclink_enhancement.client.elements.EnhancedOverlayElement;
+import moffy.cclink_enhancement.client.elements.*;
 import moffy.cclink_enhancement.client.elements.types.ActionType;
 import moffy.cclink_enhancement.client.elements.types.ElementType;
 import net.minecraft.network.FriendlyByteBuf;
@@ -16,6 +16,13 @@ public class EnhancedHUDOverlayUpdatePacket {
 
     private final UUID playerUUID;
     private final List<EnhancedOverlayElement.Entry<? extends EnhancedOverlayElement>> entries;
+
+    static {
+        EnhancedOverlayElement.register(ElementType.SCALABLE_ITEM, new ScalableItemElement.ScalableItemEncoder(), ScalableItemElement.SCALABLE_ITEMS);
+        EnhancedOverlayElement.register(ElementType.FORMATTED_TEXT, new FormattedTextElement.FormattedTextEncoder(), FormattedTextElement.FORMATTED_TEXTS);
+        EnhancedOverlayElement.register(ElementType.ENTITY, new EntityElement.EntityEncoder(), EntityElement.ENTITIES);
+        EnhancedOverlayElement.register(ElementType.TEXTURE, new TextureElement.TextureEncoder(), TextureElement.TEXTURES);
+    }
 
     public EnhancedHUDOverlayUpdatePacket(UUID playerUUID, List<EnhancedOverlayElement.Entry<?>> entries){
         this.playerUUID = playerUUID;

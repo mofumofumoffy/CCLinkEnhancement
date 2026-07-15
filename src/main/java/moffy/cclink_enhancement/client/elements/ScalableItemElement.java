@@ -111,11 +111,11 @@ public class ScalableItemElement extends EnhancedOverlayElement{
         return new ElementRenderer(SCALABLE_ITEMS);
     }
 
-    protected static class ScalableItemEncoder extends EnhancedOverlayElement.EntryEncoder<ScalableItemElement>{
+    public static class ScalableItemEncoder extends EnhancedOverlayElement.EntryEncoder<ScalableItemElement>{
         public void encode(EnhancedOverlayElement element, FriendlyByteBuf buf) {
             if(element instanceof ScalableItemElement scalableItemElement){
                 HUDOverlayUpdatePacket.safeWriteUtf(buf, scalableItemElement.itemResource, "itemResource");
-                HUDOverlayUpdatePacket.safeWriteUtf(buf, scalableItemElement.itemResource, "NBT");
+                HUDOverlayUpdatePacket.safeWriteUtf(buf, scalableItemElement.nbt, "NBT");
                 buf.writeInt(scalableItemElement.x);
                 buf.writeInt(scalableItemElement.y);
                 buf.writeInt(scalableItemElement.scale);

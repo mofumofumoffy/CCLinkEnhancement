@@ -49,7 +49,6 @@ public class EntityElement extends EnhancedOverlayElement{
     }
 
     public EntityElement(@Nullable UUID entityUUID, float yaw, float pitch, float roll, int x, int y, int scale) {
-        super();
         this.entityUUID = entityUUID;
         this.yaw = yaw;
         this.pitch = pitch;
@@ -181,7 +180,7 @@ public class EntityElement extends EnhancedOverlayElement{
         }
     }
 
-    protected static class EntityEncoder extends EnhancedOverlayElement.EntryEncoder<EntityElement>{
+    public static class EntityEncoder extends EnhancedOverlayElement.EntryEncoder<EntityElement>{
 
         @Override
         public void encode(EnhancedOverlayElement element, FriendlyByteBuf buf) {

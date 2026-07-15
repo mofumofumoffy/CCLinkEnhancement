@@ -39,7 +39,6 @@ public class FormattedTextElement extends EnhancedOverlayElement{
     }
 
     public FormattedTextElement(String text, int x, int y, int color, int scale, @Nullable TextFormat formats) {
-        super();
         this.text = text;
         this.x = x;
         this.y = y;
@@ -115,7 +114,7 @@ public class FormattedTextElement extends EnhancedOverlayElement{
         }
     }
 
-    protected static class FormattedTextEncoder extends EnhancedOverlayElement.EntryEncoder<FormattedTextElement>{
+    public static class FormattedTextEncoder extends EnhancedOverlayElement.EntryEncoder<FormattedTextElement>{
         @Override
         public void encode(EnhancedOverlayElement element, FriendlyByteBuf buf) {
             if(element instanceof FormattedTextElement formattedTextElement){

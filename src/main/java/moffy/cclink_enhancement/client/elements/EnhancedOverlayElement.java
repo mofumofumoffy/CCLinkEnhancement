@@ -16,13 +16,9 @@ public abstract class EnhancedOverlayElement {
     public static final Map<ElementType, EntryEncoder<? extends EnhancedOverlayElement>> ENCODERS = new HashMap<>();
     public static final Map<ElementType, ElementRenderer> RENDERERS = new HashMap<>();
 
-    public EnhancedOverlayElement(){
-        if(!ENCODERS.containsKey(getType())){
-            getEncoder().register(getType());
-        }
-        if(!RENDERERS.containsKey(getType())){
-            getRenderer().register(getType());
-        }
+    public static void register(ElementType type, EntryEncoder<? extends EnhancedOverlayElement> encoder, Map<UUID, Map<String, EnhancedOverlayElement>> renderMap){
+        ENCODERS.put(type, encoder);
+        RENDERERS.put(type, new ElementRenderer(renderMap));
     }
 
     public abstract void render(Minecraft mc, PoseStack poseStack, GuiGraphics guiGraphics);

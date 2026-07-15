@@ -19,7 +19,6 @@ import java.util.UUID;
 @Mod.EventBusSubscriber(modid = CCLinkEnhancement.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class EnhancedHUDOverlay {
 
-
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void onRenderGuiOverlay(RenderGuiOverlayEvent.Post event) {
         LocalPlayer player = Minecraft.getInstance().player;
