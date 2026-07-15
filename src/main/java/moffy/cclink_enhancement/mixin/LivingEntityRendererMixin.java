@@ -55,4 +55,9 @@ public class LivingEntityRendererMixin implements HUDEntityRenderer {
     public void markInHUD() {
         IS_IN_HUD.set(true);
     }
+
+    @Override
+    public boolean isInHUD() {
+        return IS_IN_HUD.get();
+    }
 }

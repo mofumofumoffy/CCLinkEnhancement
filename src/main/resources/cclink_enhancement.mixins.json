@@ -8,7 +8,8 @@
     "LinkAPIMixin"
   ],
   "client": [
-    "LivingEntityRendererMixin"
+    "LivingEntityRendererMixin",
+    "PlayerRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
