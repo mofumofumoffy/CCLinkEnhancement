@@ -7,6 +7,7 @@ import dan200.computercraft.api.lua.LuaException;
 import dan200.computercraft.api.lua.MethodResult;
 import moffy.cclink_enhancement.Registry;
 import moffy.cclink_enhancement.client.elements.*;
+import moffy.cclink_enhancement.mixin.EntryAccessor;
 import moffy.cclink_enhancement.network.EnhancedHUDOverlayUpdatePacket;
 import moffy.cclink_enhancement.network.PacketManager;
 import moffy.cclink_enhancement.client.elements.types.ActionType;
@@ -34,6 +35,9 @@ public class EnhancedOverlayUpgradeFunctions extends OverlayUpgradeFunctions {
                     EnhancedHUDOverlayUpdatePacket packet = new EnhancedHUDOverlayUpdatePacket(getPlayer().getUUID(), entries);
 
                     PacketManager.sendToClient(getPlayer().getUUID(), packet);
+
+                    entries.clear();
+                    ((EntryAccessor)this).getEntry().clear();
 
                     return MethodResult.of(true);
                 }else{
