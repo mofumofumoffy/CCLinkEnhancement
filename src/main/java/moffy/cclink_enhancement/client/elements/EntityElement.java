@@ -88,11 +88,7 @@ public class EntityElement extends EnhancedOverlayElement{
             return null;
         }
 
-        if(livingEntityCache != null){
-            if(!(isInSameDimension(mc.player, livingEntityCache) && mc.player.distanceTo(livingEntityCache) <= RANGE)){
-                livingEntityCache = null;
-            }
-        } else {
+        if(livingEntityCache == null){
             if(this.entityUUID != null){
                 if(mc.level != null) {
                     List<Entity> entityList = mc.level.getEntities((Entity) null, AABB.ofSize(mc.player.position(), RANGE, RANGE, RANGE), entity -> entity.getUUID().equals(this.entityUUID));

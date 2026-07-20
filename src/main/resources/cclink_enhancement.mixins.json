@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "cclink_enhancement.refmap.json",
   "mixins": [
+    "EntryAccessor",
     "LinkAPIMixin"
   ],
   "client": [
